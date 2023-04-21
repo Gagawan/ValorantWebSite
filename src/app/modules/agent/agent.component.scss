@@ -1,0 +1,60 @@
+.content{
+    background-image: url('../../../assets/map.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0px;
+    flex-direction: row;
+    color: wheat;
+    font-family: 'valorant'; 
+    display: flex;
+}   
+
+img{
+    max-height: 60rem;  
+    max-width: 60rem;
+}
+
+.right {
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    width: 50%;
+}
+
+.left {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column ;
+    width: 50%;
+}
+
+@font-face {
+    font-family: 'valorant';
+    src: url(../../../assets/valorant.ttf), format("opentype");
+}
+
+.icon{
+    max-width: 8rem;
+    max-height: 8rem;
+}
+
+.smallIcon{
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+.abilities{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spell{
+    display: flex;
+    justify-content: center;
+    flex-direction: column  ;
+    :hover{
+        transform: scale(1.05);
+    }
+}

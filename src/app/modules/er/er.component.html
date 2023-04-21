@@ -1,0 +1,28 @@
+<div class="body">
+
+    <div class="header">
+        <h1>Valorant.io</h1>
+        <div class="sousHeader">
+            <h2 [routerLink]="['/testApi']" class="title" >agent</h2>
+            <h2 [routerLink]="['/map']" class="title" >skin</h2>
+            <h2 [routerLink]="['/map']" class="title" >map</h2>
+        </div>
+    </div>
+
+    <div id="content">
+
+        <div *ngFor="let agent of listAgent" class="agent" [routerLink]="['/agent', agent[3]]">
+
+            <div class="sousDiv1">
+
+                <h1>{{agent[0]}}</h1> 
+                <h2>{{agent[1]}}</h2> 
+
+            </div>
+
+            <img src={{agent[2]}} alt="">
+
+        </div>   
+
+    </div>
+</div>

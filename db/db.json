@@ -1,0 +1,65 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "resume": "the resume of the Hobbit"
+    },
+    {
+      "id": 2,
+      "title": "The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "resume": "the resume of the Fellowship of the Ring"
+    },
+    {
+      "id": 3,
+      "title": "The Maze Runner",
+      "author": "James Dashner",
+      "resume": "the resume of the Maze Runner"
+    },
+    {
+      "id": 4,
+      "title": "The Scorch Trials",
+      "author": "James Dashner",
+      "resume": "the resume of the Scorch Trials"
+    },
+    {
+      "name": "aaa",
+      "lastname": "aaa",
+      "id": 5
+    },
+    {
+      "name": "aa",
+      "lastname": "",
+      "id": 6
+    },
+    {
+      "name": "aa",
+      "lastname": "a",
+      "id": 7
+    },
+    {
+      "name": "a",
+      "lastname": "a",
+      "id": 8
+    },
+    {
+      "name": "",
+      "lastname": "",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "boby@boby.fr",
+      "password": "boby"
+    },
+    {
+      "id": 2,
+      "email": "bob@bob.fr",
+      "password": "bob"
+    }
+  ]
+}
