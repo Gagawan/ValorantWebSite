@@ -1,1 +1,26 @@
-<p>games works!</p>
+<div class="body">
+
+    <div class="header">
+        <h1>Valorant.io</h1>
+        <div class="sousHeader">
+            <h2 [routerLink]="['/home']" class="title" >agent</h2>
+            <h2 [routerLink]="['/map']" class="title" >map</h2>
+            <h2 [routerLink]="['/games']" class="title" >games</h2>
+        </div>
+    </div>
+
+    <div id="content">
+
+        <div style="display: flex; flex-direction: column;">
+            <input id="input" type="text" list="cars"/>  
+            <datalist id="cars">
+            <option *ngFor="let theme of themes">{{theme}}</option>
+            </datalist>
+
+            <a class="button" (click)="isTrue()">Send</a>
+        </div>
+
+        <img src="{{skin[1]}}" alt="">
+
+    </div>
+</div>
