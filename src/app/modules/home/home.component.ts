@@ -17,7 +17,7 @@ export class HomeComponent {
         list = data.data;
         listAgent = list.map((agent) => {
           if(agent.developerName != 'Hunter_NPE'){
-            listAgent.push([agent.displayName, agent.developerName, agent.displayIcon, agent.uuid]);
+            listAgent.push([agent.displayName, agent.developerName, agent.displayIcon, agent.uuid]); 
           }
         });
       }
