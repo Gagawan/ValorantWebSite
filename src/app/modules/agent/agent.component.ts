@@ -1,8 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, switchMap } from 'rxjs';
-import { Book } from 'src/app/models';
-import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-agent',

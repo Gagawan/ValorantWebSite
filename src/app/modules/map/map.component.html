@@ -1,1 +1,27 @@
-<p>map works!</p>
+<div class="body">
+
+    <div class="header">
+        <h1>Valorant.io</h1>
+        <div class="sousHeader">
+            <h2 [routerLink]="['/home']" class="title" >agent</h2>
+            <h2 [routerLink]="['/map']" class="title" >map</h2>
+            <h2 [routerLink]="['/games']" class="title" >games</h2>
+        </div>
+    </div>
+
+    <div id="content">
+
+        <div *ngFor="let map of listMaps" class="map">
+
+            <div class="sousDiv1">
+
+                <h1>{{map[0]}}</h1> 
+
+            </div>
+
+            <img src="{{map[1]}}" alt="">
+
+        </div>   
+
+    </div>
+</div>
