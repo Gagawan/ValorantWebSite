@@ -8,6 +8,7 @@ import { AgentComponent } from './modules/agent/agent.component';
 import { MapComponent } from './modules/map/map.component';
 import { HomeComponent } from './modules/home/home.component';
 import { GamesComponent } from './modules/games/games.component';
+import { GuessTheSkinComponent } from './modules/games/guess-the-skin/guess-the-skin.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { GamesComponent } from './modules/games/games.component';
     MapComponent,
     HomeComponent,
     GamesComponent,
+    GuessTheSkinComponent,
   ],
   imports: [
     HttpClientModule,

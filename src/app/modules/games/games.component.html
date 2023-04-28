@@ -11,21 +11,16 @@
 
     <div id="content">
 
-        <div style="display: flex; flex-direction: column;">
-            <input id="input" type="text" list="cars"/>  
-            <datalist id="cars">
-            <option *ngFor="let skin of skinList">{{skin}}</option>
-            </datalist>
+            <div class="map" [routerLink]="['/games/skin']">
+                <img src="https://media.valorant-api.com/weaponskins/5b43d27b-419c-f2bc-53fe-d7829dad46b3/displayicon.png" alt="">
+                <h1>Guess The SKin</h1>
+                <p>One random skin from valorant, will you guess it ? </p>
+            </div>
 
-            <a class="button" (click)="isTrue()">Send</a>
-
-            <a class="button" style="margin-top: 2rem;" (click)="skip()">Skip</a>
-        </div>
-
-        <h3 style="color: wheat;">Streak : {{streak}}</h3>
-        <h2 id="result"></h2>
-
-        <img src="{{skin[1]}}" alt="">
-
+            <div class="map" [routerLink]="['/games']">
+                <img src="https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/abilities/grenade/displayicon.png" alt="">
+                <h1>Guess The Ability</h1>
+                <p>Guess The Ability name and to wich agent it belongs !</p>
+            </div>
     </div>
 </div>
