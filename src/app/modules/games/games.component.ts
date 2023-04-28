@@ -7,32 +7,37 @@ import { Component } from '@angular/core';
 })
 export class GamesComponent {
 
-  getAllthemes() {
+  streak = 0;
+
+  getAllSkinNames() {
     let list: any[] = [];
-    let skinthemes: any[] = [];
-    let themesUUID: any[] = [];
-    fetch('https://valorant-api.com/v1/themes')
+    let skinNames: any[] = [];
+    fetch('https://valorant-api.com/v1/weapons/skins')
       .then(response => response.json())
       .then((data) => {
           list = data.data
-          skinthemes = list.map((themes) => {
-            if(!skinthemes.includes(themes.displayName)){
-              skinthemes.push(themes.displayName); 
-              themesUUID.push(themes.uuid)
-            }
+          skinNames = list.map((skin) => {
+            skinNames.push(skin.displayName)
           });
       });
-    return [skinthemes, themesUUID];
+      return skinNames;
   }
 
-  themes = this.getAllthemes()[0];
+  skinList = this.getAllSkinNames();
 
   getRandomSkin() {
     let skinInfo: any[] = [];
+    let test = false;
     fetch('https://valorant-api.com/v1/weapons/skins')
       .then(response => response.json())
       .then((data) => {
           let rand = Math.floor(Math.random() * data.data.length);
+          while(
+            data.data[rand].displayName == "Random Favorite Skin" || 
+            data.data[rand].displayName.includes("Standard") ||
+            data.data[rand].displayIcon == null){
+              rand = Math.floor(Math.random() * data.data.length);
+            }
           skinInfo.push(data.data[rand].displayName, data.data[rand].displayIcon, data.data[rand].themeUuid);
       });
       return skinInfo;
@@ -42,22 +47,24 @@ export class GamesComponent {
 
     isTrue(){
       let result = (<HTMLInputElement>document.getElementById("input")).value;
-      let list: any[] = [];
-      let uuid: string;
-      fetch('https://valorant-api.com/v1/themes')
-      .then(response => response.json())
-      .then((data) => {
-        list = data.data
-        list.map((theme) => {
-          if(theme.displayName == result){
-            uuid = theme.uuid
-          }
-        });
-        if(uuid == this.skin[2]){
-          console.log("win")
-        } else {
-          console.log("lose")
-        }
-      });
+      if(result == this.skin[0]){
+        setTimeout(() => (<HTMLInputElement>document.getElementById("result")).innerHTML = "", 2000);
+        this.streak++;
+        (<HTMLInputElement>document.getElementById("input")).value = "";
+        (<HTMLInputElement>document.getElementById("result")).innerHTML = "You win! The skin was " + this.skin[0];
+          this.skin = this.getRandomSkin(); 
+      } else {
+        this.streak = 0;
+        (<HTMLInputElement>document.getElementById("input")).value = "";
+        (<HTMLInputElement>document.getElementById("result")).innerHTML = "Try again";
+      }
     }
+
+    skip(){
+      this.streak = 0;
+      this.skin = this.getRandomSkin();
+      (<HTMLInputElement>document.getElementById("result")).innerHTML = "";
+      console.log(this.skin);
+    }
+
   }
