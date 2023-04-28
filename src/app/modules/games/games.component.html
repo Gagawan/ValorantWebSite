@@ -14,11 +14,16 @@
         <div style="display: flex; flex-direction: column;">
             <input id="input" type="text" list="cars"/>  
             <datalist id="cars">
-            <option *ngFor="let theme of themes">{{theme}}</option>
+            <option *ngFor="let skin of skinList">{{skin}}</option>
             </datalist>
 
             <a class="button" (click)="isTrue()">Send</a>
+
+            <a class="button" style="margin-top: 2rem;" (click)="skip()">Skip</a>
         </div>
+
+        <h3 style="color: wheat;">Streak : {{streak}}</h3>
+        <h2 id="result"></h2>
 
         <img src="{{skin[1]}}" alt="">
 
